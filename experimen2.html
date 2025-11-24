@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us | NovaTech Atelier</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ink: #2c2c2c; /* primary text */
+        --muted: #6b7280; /* secondary text */
+        --bg: #fdfaf6; /* page bg (light cream) */
+        --card: #ffffff; /* card bg */
+        --line: #e5e7eb; /* separators */
+        --brand: #6d28d9; /* royal purple */
+        --accent: #f97373; /* coral pink */
+        --gold: #e6b89c; /* rose gold */
+        --header-gradient: linear-gradient(to bottom, #6d28d9, #9333ea, #f97373);
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, system-ui;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.65;
+      }
+
+      h1,
+      h2,
+     h3 {
+        font-family: "Playfair Display", serif;
+        margin: 0 0 0.6rem;
+      }
+
+      p {
+        margin: 0.4rem 0 1rem;
+        color: var(--muted);
+      }
+
+      ::selection {
+        background: var(--accent);
+        color: white;
+      }
+
+      /* ---------- Header ---------- */
+      #about-header {
+        position: relative;
+        padding: 96px 24px 120px;
+        text-align: center;
+        color: #fff;
+        background: var(--header-gradient);
+        overflow: hidden;
+      }
+
+      #about-header::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 48px;
+        width: 140px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        border-radius: 999px;
+      }
+
+      #about-header h1 {
+        font-size: 2.2rem;
+        letter-spacing: 0.5px;
+      }
+
+      #about-header p {
+        max-width: 720px;
+        margin: 0.75rem auto 0;
+        color: #f9fafb;
+        opacity: 0.95;
+      }
+
+      /* ---------- Container ---------- */
+      .container {
+        max-width: 1120px;
+        margin: 0 auto 64px;
+        padding: 0 24px;
+      }
+
+      /* ---------- Card ---------- */
+      .card {
+        background: var(--card);
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+        border: 1px solid var(--line);
+        padding: 32px 28px;
+      }
+
+      .section {
+        margin: 28px 0 40px;
+      }
+
+      .section-title {
+        display: inline-block;
+        font-size: 1.4rem;
+        color: var(--ink);
+ position: relative;
+        padding-bottom: 8px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 56%;
+        height: 6px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--brand), var(--accent));
+        opacity: 0.2;
+      }
+
+      .lead::first-letter {
+        font-family: "Playfair Display", serif;
+        font-size: 2.6rem;
+        line-height: 1;
+        float: left;
+        margin: 0.1rem 0.5rem 0 0;
+        color: var(--brand);
+      }
+
+      /* ---------- Links ---------- */
+      a[target="_blank"] {
+        color: var(--brand);
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(109, 40, 217, 0.4);
+        transition: color 0.2s ease, border-color 0.2s ease;
+      }
+      a[target="_blank"]::after {
+        content: " ↗";
+        font-weight: 600;
+      }
+      a[target="_blank"]:hover {
+  color: var(--accent);
+        border-color: var(--accent);
+      }
+
+      /* ---------- Values List ---------- */
+      ul.values {
+        padding-left: 1.2rem;
+        margin: 0.6rem 0 0;
+      }
+      ul.values li {
+        margin: 0.1rem 0 0.35rem;
+      }
+      ul.values li::marker {
+        color: var(--accent);
+      }
+
+      /* ---------- Team ---------- */
+      .team {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 22px;
+        margin-top: 14px;
+      }
+
+      .member {
+        position: relative;
+        padding: 26px 22px 22px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, #ffffff, #fdfaf6);
+        border: 1px solid var(--line);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .member::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top: 26px solid rgba(109, 40, 217, 0.15);
+        border-right: 26px solid rgba(109, 40, 217, 0.15);
+        border-left: 26px solid transparent;
+        border-bottom: 26px solid transparent;
+        border-top-right-radius: 14px;
+      }
+
+      .member[data-role="ceo"]::after {
+        content: " CEO ";
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        font-size: 0.72rem;
+        letter-spacing: 0.4px;
+        background: linear-gradient(90deg, var(--gold), #fce8dc);
+        color: #2a2a2a;
+        padding: 4px 8px;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      .member:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.15);
+        border-color: #ede9fe;
+      }
+
+      .member img {
+
+
